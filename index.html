@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml">
+<head >
+    <meta charset="UTF-8" content="text/Javascript"/>
+    <title>Bike's Loc</title>
+    <link href="css/style.css" media="screen and (min-width: 768px)" rel="stylesheet" type="text/css"/>
+    <link crossorigin="" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+          integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+          rel="stylesheet"/>
+    <script type="application/javascript" crossorigin=""
+            integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+            src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script type="application/javascript" src="js/jquery-3.4.1.js"></script>
+
+</head>
+<body>
+<header>
+    <img src="images/bike_green.svg" alt="bike_green"/>
+    <h1>Bike's Loc</h1>
+    <img src="images/bike_green.svg" alt="bike_green"/>
+</header>
+
+
+<section id="notice">
+    <h2>Notice d'utilisation : </h2>
+    <div id="carousel_container">
+        <div id="carousel">
+            <img alt="notice" id="carousel_item" src="#">
+
+            <div id="controls">
+                <button id="prev" type="button">
+                    <i class="fa fa-chevron-left fa-2x"></i>
+                </button>
+
+                <button id="play" type="button">
+                    <i class="far fa-play-circle fa-2x"></i>
+                </button>
+
+                <button id="pause" type="button">
+                    <i class="far fa-pause-circle fa-2x"></i>
+                </button>
+
+                <button id="next" type="button">
+                    <i class="fa fa-chevron-right fa-2x"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="map_title">
+    <h3>Trouvez votre station la plus proche sur cette carte de la ville.</h3>
+</section>
+
+<section id="map">
+    <div id="city_map"></div>
+    <div id="infos_container">
+        <div id="station_info_container">
+            <h4>Ici s'affiche les informations de la station que vous avez sélectionné.</h4>
+            <ul id="station_informations">
+                <li id="name"></li>
+                <li id="address"></li>
+                <li id="bikes_available"></li>
+                <li id="bikes_stands"></li>
+                <li id="status"></li>
+                <li><img alt="" src="#" id="card"/></li>
+            </ul>
+            <input id="rent" name="rent" type="button" value="Réserver"/>
+            <p id="rent_not_available">Location impossible dans cette station pour le moment.</p>
+        </div>
+
+        <div id="rental_management">
+            <p>Récapitulatif de votre réservation :</p>
+            <ul>
+                <li id="station"></li>
+                <li id="customer"></li>
+                <li id="timer"></li>
+            </ul>
+            <input id="cancel" name="cancel" type="button" value="annuler"/>
+        </div>
+    </div>
+
+    <div id="reservation_form">
+        <form action="#" autocomplete="on" id="bike_reservation" method="post">
+            <div id="inputdata">
+                <label for="lastname">Prénom :
+                    <input id="lastname" name="lastname" type="text" required value=""/>
+                </label>
+
+                <p id="error-name">*veuillez renseigner votre nom</p>
+
+                <label for="firstname">Nom :
+                    <input id="firstname" name="firstname" required type="text" value=""/>
+                </label>
+
+                <p id="error-firstname">*veuillez renseigner votre prénom</p>
+            </div>
+            <canvas height="200" id="canvas" width="569"></canvas>
+            <div id="canvas_buttons">
+                <p id="error-signature">*Signature obligatoire !</p>
+                <button id="canceled" name="clean" type="button" value="Annuler">Annuler</button>
+                <button id="clear" name="clean" type="button" value="Effacer">Effacer</button>
+                <button id="reservation" type="button" value="Valider">Valider</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <div id="city_hall_address">
+        <p>Mairie de Marseille<br>
+            Service Bike's Loc <br>
+            121 Avenue Canebière
+            13001 Marseille<br>
+            <i class="fas fa-phone-square-alt"></i> 04.32.21.45.25
+        </p>
+    </div>
+
+    <div id="socials_icons_container">
+        <p>Suivez les évolutions de votre service sur les réseaux sociaux :</p>
+        <ul id="social_icons">
+            <li class="social"><a href="http://facebook.fr"><i class="fab fa-facebook-square fa-2x"></i></a></li>
+            <li class="social"><a href="http://instagram.com"><i class="fab fa-instagram fa-2x"></i></a></li>
+            <li class="social"><a href="http://twitter.com"><i class="fab fa-twitter-square fa-2x"></i></a></li>
+        </ul>
+    </div>
+</footer>
+
+<script src="js/Ajax.js"></script>
+<script src="js/Carousel.js"></script>
+<script src="js/Map.js"></script>
+<script src="js/Canvas.js"></script>
+<script src="js/Reservation.js"></script>
+<script src="js/Countdown.js"></script>
+<script src="js/main.js"></script>
+<script src="https://kit.fontawesome.com/11f79c9fc2.js"></script>
+</body>
+</html>
